@@ -1,0 +1,43 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+      {
+          "Sid": "VisualEditor0",
+          "Effect": "Allow",
+          "Action": [
+              "lambda:CreateFunction",
+              "lambda:ListVersionsByFunction",
+              "events:PutRule",
+              "iam:DeletePolicy",
+              "iam:CreateRole",
+              "cloudformation:DescribeStackResource",
+              "iam:AttachRolePolicy",
+              "iam:PutRolePolicy",
+              "iam:PassRole",
+              "cloudformation:DescribeStackEvents",
+              "iam:DetachRolePolicy",
+              "iam:DeleteRolePolicy",
+              "cloudformation:UpdateStack",
+              "events:RemoveTargets",
+              "lambda:DeleteFunction",
+              "iam:GetRole",
+              "events:DescribeRule",
+              "logs:DeleteLogGroup",
+              "s3:*",
+              "lambda:GetFunction",
+              "iam:DeleteRole",
+              "logs:CreateLogGroup",
+              "cloudformation:DescribeStacks",
+              "events:PutTargets",
+              "events:DeleteRule",
+              "lambda:UpdateFunctionCode",
+              "lambda:AddPermission",
+              "cloudformation:CreateStack",
+              "lambda:PublishVersion",
+              "iam:GetRolePolicy",
+              "cloudformation:ValidateTemplate"
+          ],
+          "Resource": "*"
+      }
+  ]
+}
