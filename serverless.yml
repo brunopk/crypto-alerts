@@ -23,5 +23,5 @@ functions:
   hello:
     handler: src/functions/hello/handler.main
     events:
-      - schedule: rate(2 minutes)
+      - schedule: rate(10 minutes)
     
