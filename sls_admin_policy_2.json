@@ -2,54 +2,30 @@
   "Version": "2012-10-17",
   "Statement": [
       {
-          "Sid": "VisualEditor0",
+          "Sid": "1",
           "Effect": "Allow",
           "Action": [
-              "events:DeleteRule",
-              "events:DescribeRule",
-              "events:PutRule",
-              "cloudformation:ValidateTemplate"
-          ],
-          "Resource": "*"
-      },
-      {
-          "Sid": "VisualEditor1",
-          "Effect": "Allow",
-          "Action": [
-              "lambda:CreateFunction",
-              "iam:PutRolePolicy",
-              "cloudformation:DescribeStackEvents",
               "s3:PutLifecycleConfiguration",
-              "cloudformation:UpdateStack",
-              "lambda:DeleteFunction",
               "s3:PutObjectTagging",
               "s3:DeleteObject",
-              "cloudformation:ListStackResources",
-              "iam:GetRole",
               "s3:GetBucketWebsite",
               "s3:PutReplicationConfiguration",
-              "iam:DeleteRole",
               "s3:DeleteObjectVersionTagging",
               "s3:GetObjectLegalHold",
               "s3:GetBucketNotification",
               "s3:DeleteBucketPolicy",
               "s3:GetReplicationConfiguration",
-              "lambda:UpdateFunctionCode",
               "s3:PutObject",
               "s3:PutBucketNotification",
               "s3:PutObjectVersionAcl",
-              "lambda:PublishVersion",
               "s3:PutBucketObjectLockConfiguration",
-              "iam:GetRolePolicy",
               "s3:GetLifecycleConfiguration",
               "s3:GetInventoryConfiguration",
               "s3:GetBucketTagging",
               "s3:ReplicateTags",
               "s3:ListBucket",
-              "iam:PassRole",
               "s3:AbortMultipartUpload",
               "s3:PutBucketTagging",
-              "iam:DeleteRolePolicy",
               "s3:DeleteBucket",
               "s3:PutBucketVersioning",
               "s3:ListBucketMultipartUploads",
@@ -66,14 +42,10 @@
               "s3:GetObjectVersion",
               "s3:PutAnalyticsConfiguration",
               "s3:GetObjectVersionTagging",
-              "iam:CreateRole",
               "s3:CreateBucket",
-              "iam:AttachRolePolicy",
-              "cloudformation:DescribeStackResource",
               "s3:ReplicateObject",
               "s3:GetObjectAcl",
               "s3:GetBucketObjectLockConfiguration",
-              "iam:DetachRolePolicy",
               "s3:DeleteBucketWebsite",
               "s3:GetIntelligentTieringConfiguration",
               "s3:GetObjectVersionAcl",
@@ -83,19 +55,16 @@
               "s3:GetObjectRetention",
               "s3:PutObjectLegalHold",
               "s3:PutBucketCORS",
-              "cloudformation:DescribeStacks",
               "s3:ListMultipartUploadParts",
               "s3:GetObject",
               "s3:PutBucketLogging",
               "s3:GetAnalyticsConfiguration",
               "s3:GetObjectVersionForReplication",
               "s3:PutAccelerateConfiguration",
-              "lambda:ListVersionsByFunction",
               "s3:DeleteObjectVersion",
               "s3:GetBucketLogging",
               "s3:ListBucketVersions",
               "s3:RestoreObject",
-              "iam:DeletePolicy",
               "s3:GetAccelerateConfiguration",
               "s3:GetBucketPolicy",
               "s3:PutEncryptionConfiguration",
@@ -109,25 +78,91 @@
               "s3:PutObjectAcl",
               "s3:GetBucketPublicAccessBlock",
               "s3:PutBucketPublicAccessBlock",
-              "lambda:GetFunction",
               "s3:PutBucketOwnershipControls",
               "s3:GetBucketAcl",
               "s3:BypassGovernanceRetention",
               "s3:GetObjectTorrent",
-              "lambda:AddPermission",
-              "cloudformation:CreateStack",
               "s3:PutBucketPolicy",
               "s3:GetBucketLocation",
               "s3:ReplicateDelete"
           ],
           "Resource": [
-              "arn:aws:iam::202916100089:policy/asd",
-              "arn:aws:iam::202916100089:role/crypto-alerts-dev-us-east-1-lambdaRole",
-              "arn:aws:cloudformation:us-east-1:202916100089:stack/crypto-alerts-dev/976af220-c5ab-11eb-92cb-0e3259ee6b3b",
-              "arn:aws:lambda:us-east-1:202916100089:function:crypto-alerts-dev-hello",
-              "arn:aws:s3:::crypto-alerts-dev-serverlessdeploymentbucket-11l4flk7zavzy",
-              "arn:aws:s3:::crypto-alerts-dev-serverlessdeploymentbucket-11l4flk7zavzy/serverless/*"
+              "arn:aws:s3:::crypto-alerts-dev-serverlessdeploymentbucket-1prrnfzqc6gdp",
+              "arn:aws:s3:::crypto-alerts-dev-serverlessdeploymentbucket-1prrnfzqc6gdp/serverless/*"
           ]
+      },
+      {
+        "Sid": "2",
+        "Effect": "Allow",
+        "Action": [
+            "cloudformation:CreateStack",
+            "cloudformation:DescribeStacks",
+            "cloudformation:ListStackResources",
+            "cloudformation:DescribeStackResource",
+            "cloudformation:UpdateStack",
+            "cloudformation:DescribeStackEvents"
+        ],
+        "Resource": "arn:aws:cloudformation:us-east-1:202916100089:stack/crypto-alerts-dev/af6f2160-d312-11eb-93e6-1203de0f9227"
+      },
+      {
+        "Sid": "3",
+        "Effect": "Allow",
+        "Action": [
+            "cloudformation:ValidateTemplate"
+        ],
+        "Resource": "*"
+      },
+      {
+        "Sid": "4",
+        "Effect": "Allow",
+        "Action": [
+            "logs:CreateLogGroup",
+            "logs:DeleteLogGroup"
+        ],
+        "Resource": "arn:aws:logs:us-east-1:202916100089:log-group:/aws/lambda/crypto-alerts-dev-main:log-stream:*"
+      },
+      {
+        "Sid": "5",
+        "Effect": "Allow",
+        "Action": [
+            "iam:PutRolePolicy",
+            "iam:DeletePolicy",
+            "iam:DetachRolePolicy",
+            "iam:AttachRolePolicy",
+            "iam:CreateRole",
+            "iam:DeleteRolePolicy",
+            "iam:PassRole",
+            "iam:GetRolePolicy",
+            "iam:DeleteRole",
+            "iam:GetRole"
+        ],
+        "Resource": "arn:aws:iam::202916100089:role/crypto-alerts-dev-us-east-1-lambdaRole"
+      },
+      {
+        "Sid": "6",
+        "Effect": "Allow",
+        "Action": [
+            "events:DeleteRule",
+            "events:DescribeRule",
+            "events:PutRule",
+            "events:PutTargets"
+        ],
+        "Resource": "arn:aws:events:us-east-1:202916100089:rule/crypto-alerts-dev-MainEventsRuleSchedule1-*"
+      },
+      {
+        "Sid": "7",
+        "Effect": "Allow",
+        "Action": [
+            "lambda:CreateFunction",
+            "lambda:AddPermission",
+            "lambda:GetFunction",
+            "lambda:ListVersionsByFunction",
+            "lambda:RemovePermission",
+            "lambda:DeleteFunction",
+            "lambda:PublishVersion",
+            "lambda:UpdateFunctionCode"
+        ],
+        "Resource": "arn:aws:lambda:us-east-1:202916100089:function:crypto-alerts-dev-main"
       }
   ]
 }
