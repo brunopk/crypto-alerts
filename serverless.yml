@@ -20,8 +20,8 @@ provider:
   lambdaHashingVersion: '20201221'
 
 functions: 
-  hello:
-    handler: src/functions/hello/handler.main
+  main:
+    handler: src/functions/main/handler.main
     events:
       - schedule: rate(10 minutes)
     
