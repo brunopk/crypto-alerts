@@ -9,6 +9,13 @@
     "plugin:prettier/recommended",
     "prettier"
   ],
+  "settings": {
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true
+      } // this loads <rootdir>/tsconfig.json to eslint
+    }
+  },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 12
