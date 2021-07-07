@@ -12,6 +12,7 @@
   "dependencies": {
     "@middy/core": "^1.5.2",
     "@middy/http-json-body-parser": "^1.5.2",
+    "aws-sdk": "^2.940.0",
     "axios": "^0.21.1",
     "nodemailer": "^6.6.2",
     "source-map-support": "^0.5.19"

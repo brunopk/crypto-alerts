@@ -1,4 +1,5 @@
 service: 'crypto-alerts'
+
 frameworkVersion: '2'
 
 custom:
@@ -25,3 +26,20 @@ functions:
     events:
       - schedule: rate(10 minutes)
     
+resources:
+  Resources:
+    AlertTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        AttributeDefinitions:
+          - 
+            AttributeName: id
+            AttributeType: S
+        KeySchema:
+          -
+            AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+        TableName: 'crypto-alerts-dev-main'
