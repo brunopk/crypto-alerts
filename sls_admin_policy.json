@@ -35,7 +35,11 @@
               "cloudformation:CreateStack",
               "lambda:PublishVersion",
               "iam:GetRolePolicy",
-              "cloudformation:ValidateTemplate"
+              "cloudformation:ValidateTemplate",
+              "dynamodb:CreateTable",
+              "dynamodb:DescribeTable",
+              "dynamodb:DeleteTable",
+              "dynamodb:PutItem"
           ],
           "Resource": "*"
       }
