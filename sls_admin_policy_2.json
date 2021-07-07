@@ -163,6 +163,17 @@
             "lambda:UpdateFunctionCode"
         ],
         "Resource": "arn:aws:lambda:us-east-1:202916100089:function:crypto-alerts-dev-main"
+      },
+      {
+        "Sid": "8",
+        "Effect": "Allow",
+        "Action": [
+            "dynamodb:CreateTable",
+            "dynamodb:DescribeTable",
+            "dynamodb:DeleteTable",
+            "dynamodb:PutItem"
+        ],
+        "Resource": "arn:aws:dynamodb:us-east-1:202916100089:table/crypto-alerts-dev-main"
       }
   ]
 }
